@@ -14,9 +14,9 @@ We interviewed the client and she gave us the following requirements for the app
 - Products can have a category
 - Users can review products and leave how many stars (1-5). 
 
-With this information, we should be able to get started in modelling our Mongo Database. Ready?
+With this information, we should be able to get started in modeling our Mongo Database. Ready?
 
-## Modelling the Data
+## Modeling the Data
 
 First of all we need identify the entities in order to create our collections.
 

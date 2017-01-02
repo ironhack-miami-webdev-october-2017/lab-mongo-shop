@@ -12,7 +12,7 @@ We interviewed the client and she gave us the following requirements for the app
 - She needs to save the client information
 - Should be able to look the shopping history of every client
 - Products can have a category
-- Users can review products and rate them by assinging 1 to 5 stars. 
+- Users can review products and rate them by assigning 1 to 5 stars 
 
 With this information, we should be able to get started in modeling our Mongo Database. Ready?
 

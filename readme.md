@@ -1,10 +1,12 @@
-# Pair Programing | Mongo Shop
+![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
+
+# PP | Mongo Shop
 
 ![](https://i.imgur.com/IJKRm71.png =300x)
 
 ## Introduction
 
-We want to build a small database for an e-commerce application. 
+We want to build a small database for an e-commerce application.
 
 We interviewed the client and she gave us the following requirements for the application:
 
@@ -12,7 +14,7 @@ We interviewed the client and she gave us the following requirements for the app
 - She needs to save the client information
 - Should be able to look the shopping history of every client
 - Products can have a category
-- Users can review products and rate them by assigning 1 to 5 stars 
+- Users can review products and rate them by assigning 1 to 5 stars
 
 With this information, we should be able to get started in modeling our Mongo Database. Ready?
 
@@ -30,7 +32,7 @@ There are differents ways to design the structure. If we come from the world of 
   - Reviews
 
 The structured proposed is 2 collections `users` and `products`, inside the collection `users` we will store the historical purchases.  In the `products` collection we will have the reviews of each product.
- 
+
 Each of these collections will have inside the information that we need to store.
 
 ### Data Model
@@ -119,7 +121,7 @@ After you insert it, don't forget to check that the user is inserted correctly a
 Now let's add a product to our `products` collection:
 
 ```javascript
-{ 
+{
    "name": "Water Bottle",
    "description":"High quality glass bottle provides a healthier way to drink.  Silicone sleeve provides a good grip, a see-through window, and protects the glass vessel.  Eliminates toxic leaching that plastic can cause.  Innovative design holds 22-1/2 ounces.  Dishwasher safe",
    "category":"Kitchen",
@@ -131,7 +133,7 @@ Dont' forget to check that the product is inserted correctly and insert a produc
 
 ### 1.4 | Getting Started with queries
 
-1. Create a purchase with some products for the user. 
+1. Create a purchase with some products for the user.
    > Remember that purchases are the elements inside the  `"shoppingCart"` array property of a `user`.
 
 2. List all `products`
@@ -157,7 +159,7 @@ Dont' forget to check that the product is inserted correctly and insert a produc
 
 ![](https://i.imgur.com/eS8Mlzb.png)
 
-Until now we played with MongoShell, In Part 2 let's play with [MongoDB Driver for NodeJS](https://mongodb.github.io/node-mongodb-native/). 
+Until now we played with MongoShell, In Part 2 let's play with [MongoDB Driver for NodeJS](https://mongodb.github.io/node-mongodb-native/).
 
 
 #### Connecting to Mongo Database
@@ -180,11 +182,11 @@ const connectionURL = `mongodb://${dbServer}:${dbPort}/${dbName}`;
 // Use connect method to connect to the server
 MongoClient.connect(connectionURL, function(error, db) {
   if(error) { console.log("Error connecting to server", error); return;}
-  
+
   console.log("Connected successfully to server")
-  
+
   // Make your queries here   
-  
+
   db.close();
 });
 ```
@@ -193,9 +195,9 @@ First we are importing `MongoClient` from `mongodb`, that is the driver package 
 
 We use `MongoClient.connect()` to establish the connection to MongoDB. Connect recieves two argumments, one is the database's URL, and the other is a callback that will be called when the connection to the Database is available.
 
-This callback will have two parameters: 
+This callback will have two parameters:
 
-- `error`, if there are any problems 
+- `error`, if there are any problems
 - `db`: the database object we will use to perform queries
 
 ### How to perform queries in NodeJS
@@ -243,9 +245,9 @@ The project has the following structure
 | `/data`         | Folder that contain the json for collections
 | `database.js`   | Class to connect to MongoDB Driver
 | `questions.js`  | Class to interact through the prompt terminal and ask questions
-| `main.js`       | Our main file, where everything starts 
+| `main.js`       | Our main file, where everything starts
 
-Open the project with your editor 
+Open the project with your editor
 
 ### Lab 1 | Insert User
 
@@ -262,7 +264,7 @@ insertUser(user, callback = (error, result) => {}){
       // LAB 1
       // Implement the query to insert a user
       // remeber once it's finish to comment callback('Error inserting user');
-      
+
       callback('Error inserting user');
     }
   });
@@ -274,7 +276,7 @@ In line 9 type `database.collection(USERS).insertOne();`
 If we check the documentation [insertOne(doc, options, callback)](http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#insertOne)
 - `doc` is the document to insert
 - `options` we are not gonna use it now
-- `callback` is the command result callback. 
+- `callback` is the command result callback.
 
 
 ```javascript=5
@@ -305,7 +307,7 @@ Select option 1 > option 1 "User > Insert a user". follow the instructions.
 
 Once is inserted go to MongoShell and see if was inserted correctly.
 
-### Lab Exercises 
+### Lab Exercises
 
 Perform the different queries, the column Function Name is that you have to finish.
 
@@ -331,4 +333,3 @@ In this exercise we've practised the basics queries in MongoShell also we've lea
 [Reference API MongoDB Driver](http://mongodb.github.io/node-mongodb-native/2.2/api/)
 [MongoDB Driver Website](https://mongodb.github.io/node-mongodb-native/)
 [Getting Started](http://mongodb.github.io/node-mongodb-native/2.2/quick-start/)
-

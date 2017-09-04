@@ -33,18 +33,14 @@ class Database {
   }
   // Insert a user
   // user is the object to insert into the collection
-  // callback has two arguments error and result 
+  // callback has two arguments error and result
   insertUser(user, callback = (error, result) => {}){
     this.connect((error, database) => {
       if (error){
         callback(error);
       } else {
-        // LAB 1
-        // Implement the query to insert a user
-        // user is the document that we want to insert
-        // remeber once it's finish to comment callback('Error inserting user');
-        // database.collection(users).insertOne(user, callback);
-        callback('Error inserting user');
+          database.collection(users).insertOne(user, callback);
+        //callback('Error inserting user');
       }
     });
   }
@@ -114,7 +110,7 @@ class Database {
       } else {
         // LAB 6
         // Implement the query to delete a product
-        // productName is the name of the producto to delete 
+        // productName is the name of the producto to delete
         // remeber once it's finish to comment callback('Error deleting product');
         // database.collection(products).deleteOne({ name }, callback );
         callback('Error deleting product');
